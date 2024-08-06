@@ -755,24 +755,12 @@ for (let i = 0; i < numberOfColorBoxes; i++) {
     colorBox.classList.add('colorBox');
     bgAnimation.append(colorBox)
 }
-     // Hide the preloader when the website content is loaded
-     window.addEventListener('load', function() {
-            const preloader = document.querySelector('.preloader');
-            preloader.style.display = 'none';
-        });
-
-
-    // Hide the preloader when the website content is loaded
-    var preloadTime;
-
-function preloader() {
-  preloadTime = setTimeout(showPage, 5000);
-}
-
-function showPage() {
-  document.getElementById("preloader").style.display = "none";
-}
-    
+// Hide the preloader when the website content is loaded
+window.addEventListener('load', function() {
+    const preloader = document.getElementById("preloader");
+    preloader.style.display = 'none';
+});
+// Hide the preloader when the website content is loaded
 
 
     const toggleButton = document.querySelector('.dark-light');
