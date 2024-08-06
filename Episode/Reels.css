@@ -1,0 +1,379 @@
+html, body {	
+font-size: 1px; 
+
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale; 
+& b {display: block; width: 100vw; height: 3em; line-height: 3em; font-family: Sans-Serif; color: darkgrey; font-size: 10rem; font-weight: 900; text-align: center; cursor: pointer}
+}
+
+
+
+
+.RP-wrap {
+position: absolute;
+ top: 0;
+width: 100vw;
+height: 100vh;
+}
+
+.light-gradient-bg {  
+background-color:  rgb(234,236,235);
+
+}
+
+
+.SafariBUGwrapper {
+ transform: translate(0, 0);
+-webkit-transform: translate(0, 0);
+width: 100%; height: 100%;
+}
+
+
+.reel-player-cont {
+position: absolute;
+display: block;
+top: 0; left: 0; right: 0; bottom: 0;
+margin: auto;
+width: 360rem;
+height: 360rem;
+border-radius: 8rem;
+background: rgb(245, 245, 245) ;
+align-items: center;
+transform-origin: 50% 150%;
+border-left: solid 1rem rgb(240, 242, 241);
+border-right: solid 1rem rgb(240, 242, 241);
+border-top: solid 1rem rgba(255,255,255,0.5);
+border-bottom: solid 1rem rgba(0,0,0,0.25);
+ transform: scaleX(1);
+ z-index: 1;
+ transform-perspective: 20;
+overflow:hidden !important;
+  &:hover #Btm-Img-Blur {filter: blur(32rem); transition-delay: 0.0s; top: -580%;}
+  &:hover #Btm-Img-Blur.active, #Btm-Img-Blur.active {opacity: 0.4; filter:  blur(48rem); margin-top: -300rem;}
+}
+
+.amb-heavy-shadow {
+box-shadow: 0rem 0rem 0rem 0rem rgba(0,2,6,0.05), 0rem 0rem 0rem 0rem rgba(0,2,6,0.05), 0rem 0rem 0rem 0rem rgba(0,2,6,0.05), 0rem 0rem 0rem 0rem rgba(0,2,6,0.05), 0rem 0rem 0rem 0rem rgba(0,2,6,0.05); // All-0's for GSAP INtro Tween
+ box-shadow: 0rem 14rem 21rem 0rem rgba(0,2,6,0.05), 0rem 40rem 15rem -23rem rgba(0,2,6,0.08), 0rem 55rem 30rem -23rem rgba(0,2,6,0.12), 0rem 60rem 55rem -23rem rgba(0,2,6,0.10), 0rem 50rem 120rem -23rem rgba(0,2,6,0.24) // This is what GSAP Tweens to. now
+
+
+ Nu Smaller box-shadow: 0 14rem 21rem 0 rgba(0,2,6,0.05), 0 40rem 18rem -26rem rgba(0,2,6,0.08), 0 60rem 30rem -30rem rgba(0,2,6,0.12), 0 60rem 55rem -26rem rgba(0,2,6,0.10), 0 50rem 100rem -26rem rgba(0,2,6,0.2);
+ transition: box-shadow 0.5s ease;
+/*  &:hover{
+  box-shadow: 0 2rem 1rem 0 rgba(0,2,6,0.08), 0 2rem 4rem -0rem rgba(0,2,6,0.08), 0 0 0 -0rem rgba(0,2,6,0.06), 0 0 0 -4rem rgba(0,2,6,0.12), 0 0 2rem -4rem rgba(0,2,6,0.12);
+      //vvv lighter-out
+  //box-shadow: 0 2rem 2rem 0 rgba(0,2,6,0.05), 0 4rem 5rem 0 rgba(0,2,6,0.08), 0 0 0 0 rgba(0,2,6,0.12), 0 0 0 0 rgba(0,2,6,0.05), 0 0 0 0 rgba(0,2,6,0.1);
+  } */
+}
+.video-cont {
+position: absolute;
+width: 100%;
+height: 100%;
+top:0; left: 0;
+background-color: transparent;
+border-radius: 8rem;
+overflow: hidden;
+z-index: 10;
+pointer-events: none;
+  .video-BG {
+  position: absolute;
+  width: 100%;
+  height: 65rem;
+  bottom:0; left: 0;
+  background-color: rgb(15,15,15);
+    opacity: 0;
+   visibility: hidden;
+  pointer-events: visible;
+}
+}
+
+iframe { 
+ width:100%; 
+height:180%; 
+position:absolute; 
+left:0; 
+top:-40%; 
+z-index:3;
+// opacity: 0;
+}
+
+
+
+#Btm-Img-Blur {
+//  filter: blur(0rem); // blur=0 for (when hover active vvv-below)
+filter: blur(32rem); //DISABLED Hover for Performance (Blur is now constant/ Hover state above ^^^)
+&.active {filter: blur(48rem)}
+// position: relative;
+display: block;
+margin-top: -320rem;
+// top: -565%;
+//  left: -50%;
+width: 648rem;
+z-index: -1;
+// mix-blend-mode: screen;
+
+opacity: 0.3;
+transition: all 1.2s ease;
+transition-property: filter, top, margin, opacity; //, top, opacity, width;
+transition-delay: 0.5s;
+transform: rotateX(0.5deg);
+transform-origin: 50% 50%;
+//  &.active:hover {top: 0%; filter: blur(0rem);}
+}
+#img-flex{
+display: flex;
+position: absolute;
+width: 100%; height: 100%;
+align-items: center;
+justify-content: center;
+}
+
+.rp-img-cont {
+display:block;
+position: relative;
+top: 0; left:0;
+height: 360rem;
+width: 360rem;
+margin: 0 auto;
+border-radius: inherit;
+z-index: 0; //fixes border-overflow
+//     -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC); /* this fixes the overflow:hidden in Chrome/Opera */
+// opacity: 0.9999; //fixes border-overflow
+overflow: hidden;
+}
+.player-img {
+ position: absolute;
+top: 0; left:0; bottom: 0; right: 0;
+margin: auto;
+margin-left: -6%;
+margin-bottom: -5%; //goldsands -5%
+height: 110%; //goldsands 110%
+opacity: 0.85;
+//  object-fit: scale-down;
+//  filter: blur(15rem);
+//  transition: filter 0.5s ease;
+//  transition-duration: 1.2s;
+transition: margin 1.2s cubic-bezier(0.16, 0.0, 0, 0.95); 
+transition-delay:0.1s;
+&.active { margin-bottom: 2%; transition-delay:0.0s; transition-duration:0.75s; transition-timing-function: cubic-bezier(0.20, 0.20, 0, 1);}
+}
+
+// Top BAR *Start
+.player-bar-top {
+position: absolute;
+top: 0;
+height: 66rem;
+width: 100%;
+
+//  background: rgba(0,1,2, 0.015);
+border-radius: 8rem 8rem 0 0;
+ h1, h2 {font-family: 'Product Sans', 'Proxima Nova', 'Gotham', 'Helvetica Neue', Sans Serif; color: rgb(0,3,12);left:50%;  margin-left: -150rem; text-align: left;}
+ h1{
+   position: relative;
+   margin-top: 22rem;
+   font-size: 12rem;
+   font-weight: 600;
+   letter-spacing: 0.067em;
+   opacity: 0.7;
+   line-height: 15rem;
+ }
+h2{
+   position: relative;
+   font-size: 11rem;
+   font-weight: 400;
+   letter-spacing: 0.033em;
+   opacity: 0.4;
+  line-height: 17rem;
+ }
+p{
+  position: absolute;
+  height: 100%;
+  top: 0;
+  right: 0;
+  margin-right: 20rem;
+  text-align: right;
+  font: 600  11rem/66rem 'Proxima Nova';
+  opacity: 0.0; /////////
+  & i{
+    font-size: 28rem;
+    line-height: 60rem;
+    text-align: right;
+    vertical-align: middle;
+  }
+}
+}
+
+//Controls BTM BAR
+.player-bar-btm {
+position: absolute;
+bottom: 0;
+height: 66rem;
+width: 100%;
+// background: rgba(0,1,2, 0.015);
+background: rgba(255,255,255, 0.2);
+border-radius: 0 0 8rem 8rem;
+user-select: none;
+overflow: hidden;
+z-index: 99;
+// box-shadow: 0rem 0rem 0rem 0rem rgba(0,2,6,0.02);
+box-shadow: 0rem -3rem 3rem -3rem rgba(0,2,6,0.024), 0rem -6rem 10rem -4rem rgba(90,60,15,0.0166);
+  transition: box-shadow 1s ease;
+// &.active {box-shadow: 0rem -14rem 3rem -12rem rgba(0,2,6,0.032), 0rem -22rem 12rem -12rem rgba(90,60,15,0.020);}
+}
+/* Volume Slider START */
+.volume-slide-cont {
+display: flex;
+position: absolute;
+left: 0;
+height: 100%;
+width: 40%;
+// justify-content: space-around;
+align-items: center;
+float: left; 
+font-size: 100%;
+}
+.slider_horizontal {
+position: relative;
+top: 0rem;
+left: 32rem;
+width: 80rem;
+height: 1.6rem;
+background: rgba(0,0,0,0.056);
+}
+.progress {
+position: absolute;
+bottom: 0;
+width: 0; //starting val 75%
+height: 100%;
+background: rgba(28,0,0,0.093);
+}
+.handle {
+position: absolute;
+left: 0; //starting val 68rem
+top: 0;
+width: 12rem;
+height: 12rem;
+margin-left: -6rem;
+margin-top: -6rem;
+border-radius: 50%;
+box-sizing: border-box;
+//  border: solid 1rem transparent;
+cursor: pointer;
+background: rgba(255,255,255,1.0);
+box-shadow: 0 2rem 3rem rgba(0,0,0,0.08), 0 5rem 6rem rgba(0,0,0,0.1);
+transform: scale(1);
+transform-origin: 50% 60%;
+transition: all 0.25s ease;
+transition-property: transform, box-shadow, background;
+&:hover, &:active {
+  background: rgba(255,255,255,1.0); 
+}
+&:hover {
+//   border: solid 1rem rgba(0,0,0,0.15);
+  transform: scale(1.15);
+  box-shadow: 0 3rem 4rem rgba(0,0,0,0.15), 0 6rem 8rem rgba(0,0,0,0.2);
+}
+&:active {
+  transform: scale(1.0);
+  box-shadow: 0 1rem 1rem rgba(0,0,0,0.15), 0 2rem 4rem rgba(0,0,0,0.12);
+}
+}
+#volume-result {
+position:absolute;
+height: 20rem;
+width: 180rem;
+top:10rem;
+right:100rem;
+text-align: center;
+font: 100 11rem/20rem monospace;
+color: grey;
+//  background: silver;
+}
+/* Volume Slider END */
+.center-button {
+position: relative;
+margin: 0 auto;
+height: 100%;
+width: 66rem;
+border-radius: 50%;
+& i{
+  display:block;
+  position: relative;
+  width: intrinsic; width: fit-content;
+  height: intrinsic; height: fit-content;
+  font-size: 24rem;
+  line-height: 66rem;
+  margin: 0 auto;
+  pointer-events: none;
+  text-shadow: 0 0 0 rgba(0,0,0, 0.2), 0 0 0 rgba(0,0,0, 0.3);
+  transition: text-shadow 0.3s ease;
+}
+}  
+
+#Play-SVG-Circle {
+display: block;
+position: absolute;
+height:100%; 
+width: 100%;
+fill: none;
+pointer-events: visiblePainted;
+
+& #Circle-Outline {
+  fill: transparent;
+  stroke: rgb(0,0,0);
+  opacity: 0.1;
+  stroke-width: 0.6666rem;
+  stroke-dashoffset: 133;
+  stroke-dasharray: 133 133;   /* 133=length */
+  transform-origin:'50% 50%';
+  transition: stroke 0.4s ease-out;
+  cursor: pointer;
+  &:hover {
+    //opacity: 0.0 !important;
+    stroke: rgba(0,0,0, 0.1);
+  }
+  &:hover ~ #Circle-Fill{
+    r: 21.75rem;
+    opacity: 0.05;
+    transition: r 0.4s cubic-bezier(0.1,0.1, 0.0, 1),opacity 0s ease-out;
+  }
+}
+& #Circle-Fill {
+  fill: rgb(0,0,0);
+  opacity: 0.0;
+  r: 0;
+  transition: opacity 0.4s ease-out, r 0s 0.4s ease-out;
+  pointer-events: none;
+}
+  & #Circle-gsap {
+  fill: rgb(0,0,0);
+  opacity: 0.04;
+  
+  pointer-events: none;
+}
+&:hover + i {
+  text-shadow: 0 3rem 2rem rgba(0,0,0, 0.2), 2rem 4rem 6rem rgba(0,0,0, 0.25);
+  }
+.btm-right-cont {
+position: absolute;
+top: 0;
+right: 0;
+height: 100%;
+width: 40%;
+& i{
+  position: absolute;
+  font-size: 24rem;
+  line-height: 66rem;
+  right: 0;
+  margin: 0 26rem;
+  opacity: 0.08;
+  transform: rotate(-45deg);
+  cursor: pointer;
+  text-shadow: 0 0 0 rgba(0,0,0, 0.8), 0 0 0 rgba(0,0,0, 0.6);
+  transition: all 0.25s ease;
+  &:hover {
+    opacity: 0.85;
+    text-shadow: -2rem 2rem 2rem rgba(0,0,0, 0.2), -2rem 4rem 6rem rgba(0,0,0, 0.25);
+  }
+}
+}
