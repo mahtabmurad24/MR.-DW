@@ -56,6 +56,39 @@ body{
     color: #fff;
     box-shadow: 0 5px 10px rgba(194, 194, 194, 0.25);
 }
+.dark-light {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: var(--header-bg-color);
+  box-shadow: -1px 3px 8px -1px rgba(0, 0, 0, 0.2);
+  padding: 8px;
+  border-radius: 50%;
+  z-index: 3;
+  width: 2em;
+  height: 2em;
+  background-color: #323A4B;
+  color: aliceblue;
+  svg {
+   width: 28px;
+  }
+ }
+ 
+ .dark-mode .dark-light svg {
+     fill: #ffce45;
+     stroke: #ffce45;
+ }
+ 
+ .dark-light svg {
+     fill: transparent;
+     transition: 0.5s;
+ }
+ .dark-light:hover {
+  background-color: rgb(24, 42, 82);
+  color: white;
+  transition: .4s;
+  cursor: pointer;
+}
 
 
 /* Text flow  */
